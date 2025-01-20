@@ -19,6 +19,10 @@ namespace BookStore.Controllers
         {
             return View();
         }
+        public IActionResult Backoffice()
+        {
+            return View();
+        }
 
         public IActionResult Details()
 		{
