@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using BookStore.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStore
@@ -9,5 +10,6 @@ namespace BookStore
             : base(options)
         {
         }
+        public DbSet<Book> Books { get; set; }
     }
 }
