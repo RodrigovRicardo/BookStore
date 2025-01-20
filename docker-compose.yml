@@ -1,0 +1,24 @@
+services:
+  bookstore:
+    image: ${DOCKER_REGISTRY-}bookstore
+    build:
+      context: .
+      dockerfile: BookStore/Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver-container;Database=DbLibrary;User Id=sa;Password=Strongpassword123;Trust Server Certificate=True;
+    depends_on:
+      - sqlserver
+  sqlserver:
+    container_name: sqlserver-container
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "8002:1433"
+    environment:
+      - "ACCEPT_EULA=Y"
+      - "SA_PASSWORD=Strongpassword123"
+    volumes:
+      - DbStorage:/var/opt/mssql
+
+# Armazenamento para guardar conteudos
+volumes:
+    DbStorage:  
