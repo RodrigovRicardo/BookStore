@@ -1,8 +1,63 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Landing Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros Apresentados</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <main>
+        <h1>Welcome to Our Bookstore</h1>
+        <p>Here you can find a selection of books that we have available for you.</p>
+        <section class="books-section">
+            <div class="book-container">
+                <div class="book">
+                    <a href="Details?id=1">
+                        <img src="imagens_livros/Arte_subtil_de_dizer_que_se_F.jpg" alt="Arte subtil de dizer que se F">
+                        <p><strong>Título:</strong> Arte subtil de dizer que se F</p>
+                        <p><strong>Autor:</strong> Mark Manson</p>
+                        <p><strong>Preço:</strong> €15.99</p>
+                    </a>
+                </div>
+                <div class="book">
+                    <a href="Details?id=2">
+                        <img src="imagens_livros/Multiplique_o_seu_dinheiro.jpg" alt="Multiplique o seu dinheiro">
+                        <p><strong>Título:</strong> Multiplique o seu dinheiro</p>
+                        <p><strong>Autor:</strong> Gustavo Cerbasi</p>
+                        <p><strong>Preço:</strong> €12.50</p>
+                    </a>
+                </div>
+                <div class="book">
+                    <a href="Details?id=3">
+                        <img src="imagens_livros/O_Lobo_de_Wall_Street.jpg" alt="O Lobo de Wall Street">
+                        <p><strong>Título:</strong> O Lobo de Wall Street</p>
+                        <p><strong>Autor:</strong> Jordan Belfort</p>
+                        <p><strong>Preço:</strong> €18.20</p>
+                    </a>
+                </div>
+                <div class="book">
+                    <a href="Details?id=4">
+                        <img src="imagens_livros/Quem_mexeu_no_meu_queijinho.jpg" alt="Quem mexeu no meu queijinho">
+                        <p><strong>Título:</strong> Quem mexeu no meu queijinho</p>
+                        <p><strong>Autor:</strong> Spencer Johnson</p>
+                        <p><strong>Preço:</strong> €10.00</p>
+                    </a>
+                </div>
+                <div class="book">
+                    <a href="Details?id=5">
+                        <img src="imagens_livros/A_psicologia_do_dinheiro.jpg" alt="A psicologia do dinheiro">
+                        <p><strong>Título:</strong> A psicologia do dinheiro</p>
+                        <p><strong>Autor:</strong> Morgan Housel</p>
+                        <p><strong>Preço:</strong> €14.99</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
