@@ -8,22 +8,21 @@ namespace BookStore.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, BookStoreContext context)
+		{
+			_logger = logger;
+			_context = context;
+		}
+		public IActionResult index()
         {
-            _logger = logger;
+            return View();
         }
-
-        public IActionResult Index()
+        public IActionResult Backoffice()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-		public IActionResult Details()
+        public IActionResult Details()
 		{
 			return View();
 		}
