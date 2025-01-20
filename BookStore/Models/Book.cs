@@ -15,6 +15,6 @@ namespace BookStore.Models
         public string Publisher { get; set; }
         public int Price { get; set; }
         public string Author { get; set; }
-        public string ImageUrl { get; set; }
+        public string Image { get; set; }
     }
 }

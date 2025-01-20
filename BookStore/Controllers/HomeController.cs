@@ -7,6 +7,7 @@ namespace BookStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly BookStoreContext _context;
 
 		public HomeController(ILogger<HomeController> logger, BookStoreContext context)
 		{
