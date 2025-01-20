@@ -15,8 +15,12 @@ namespace BookStore.Controllers
 			_logger = logger;
 			_context = context;
 		}
+		public IActionResult index()
+        {
+            return View();
+        }
 
-		public IActionResult Details()
+        public IActionResult Details()
 		{
 			return View();
 		}
