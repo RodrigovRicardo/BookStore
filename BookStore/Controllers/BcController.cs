@@ -24,12 +24,25 @@ namespace BookStore.Controllers
         }
         public IActionResult Create()
         {
+            var book = new Book();
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Books.Add(book);
+                _context.SaveChanges();
+                return RedirectToAction("Backoffice", "Home");
+            }
             return View();
         }
 
         public IActionResult Details(int id)
         {
-            var book = _context.Books.FirstOrDefault(b => b.Id == id);
+            var book = _context.Books.FirstOrDefault(p => p.Id == id);
 
             if (book == null)
             {
@@ -68,7 +81,6 @@ namespace BookStore.Controllers
             return View(book);
         }
 
-        [HttpDelete]
         public IActionResult Delete(int id)
         {
             var book = _context.Books.FirstOrDefault(p => p.Id == id);
