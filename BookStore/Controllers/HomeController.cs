@@ -14,11 +14,13 @@ namespace BookStore.Controllers
 			_logger = logger;
 			_context = context;
 		}
-		public IActionResult index()
-        {
-            return View();
-        }
-        public IActionResult Backoffice()
+		public IActionResult Index()
+		{
+			var livros = _context.Books.ToList();
+			return View(livros);
+		}
+
+		public IActionResult Backoffice()
         {
             return View(_context.Books.ToList());
         }

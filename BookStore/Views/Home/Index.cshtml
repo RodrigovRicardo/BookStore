@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<BookStore.Models.Book>
+
+@{
     ViewData["Title"] = "Landing Page";
 }
 
@@ -16,51 +18,18 @@
         <p>Here you can find a selection of books that we have available for you.</p>
         <section class="books-section">
             <div class="book-container">
-                <div class="book">
-                    <a href="Details?id=1">
-                        <img src="imagensLivro/A_arte_subtil_de_saber_dizer_que_se_F.jpg" alt="Arte subtil de dizer que se F">
-                        <p><strong>Título:</strong> Arte subtil de dizer que se F</p>
-                        <p><strong>Autor:</strong> Mark Manson</p>
-                        <p><strong>Preço:</strong> €8.00</p>
-                    </a>
-                    <button>Comprar já</button>
-                </div>
-                <div class="book">
-                    <a href="Details?id=2">
-                        <img src="imagensLivro/Multiplique_o_seu_Dinheiro .jpg" alt="Multiplique o seu dinheiro">
-                        <p><strong>Título:</strong> Multiplique o seu dinheiro</p>
-                        <p><strong>Autor:</strong> Ariana Nunes</p>
-                        <p><strong>Preço:</strong> €16.90</p>
-                    </a>
-                    <button>Comprar já</button>
-                </div>
-                <div class="book">
-                    <a href="Details?id=3">
-                        <img src="imagensLivro/The_Wolf_of_Wall_Street.jpg" alt="O Lobo de Wall Street">
-                        <p><strong>Título:</strong> O Lobo de Wall Street</p>
-                        <p><strong>Autor:</strong> Jordan Belfort</p>
-                        <p><strong>Preço:</strong> €21.90</p>
-                    </a>
-                    <button>Comprar já</button>
-                </div>
-                <div class="book">
-                    <a href="Details?id=4">
-                        <img src="imagensLivro/Quem_mexeu_no_meu_queijinho.jpg" alt="Quem mexeu no meu queijinho">
-                        <p><strong>Título:</strong> Quem mexeu no meu queijinho</p>
-                        <p><strong>Autor:</strong> Spencer Johnson</p>
-                        <p><strong>Preço:</strong> €11.97</p>
-                    </a>
-                    <button>Comprar já</button>
-                </div>
-                <div class="book">
-                    <a href="Details?id=5">
-                        <img src="imagensLivro/A_psicologia_do_dinheiro.jpg" alt="A psicologia do dinheiro">
-                        <p><strong>Título:</strong> A psicologia do dinheiro</p>
-                        <p><strong>Autor:</strong> Morgan Housel</p>
-                        <p><strong>Preço:</strong> €16.90</p>
-                    </a>
-                    <button>Comprar já</button>
-                </div>
+                @foreach (var livro in Model)
+                {
+                    <div class="book">
+                        <a href="Details?id=@livro.Id">
+                            <img src="@livro.Image" alt="@livro.Title">
+                            <p><strong>Título:</strong> @livro.Title</p>
+                            <p><strong>Autor:</strong> @livro.Publisher</p>
+                            <p><strong>Preço:</strong> €@livro.Price</p>
+                        </a>
+                        <button>Comprar já</button>
+                    </div>
+                }
             </div>
         </section>
     </main>
