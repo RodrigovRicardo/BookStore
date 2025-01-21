@@ -37,6 +37,7 @@
                         <td>@item.Price</td>
                         <td>
                             <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Edit</button></a>
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Details</button></a>
                             <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-danger">Delete</button></a>
                         </td>
                     </tr>
