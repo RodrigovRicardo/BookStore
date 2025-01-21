@@ -22,14 +22,6 @@ namespace BookStore.Controllers
         {
             return View(_context.Books.ToList());
         }
-        public IActionResult Create()
-        {
-            return View();
-        }
-        public IActionResult Details()
-		{
-			return View();
-		}
 
 		public IActionResult Register()
 		{
