@@ -26,8 +26,12 @@ namespace BookStore.Controllers
         {
             return View();
         }
+        public IActionResult Details()
+		{
+			return View();
+		}
 
-		public IActionResult Registration()
+		public IActionResult Register()
 		{
 			return View();
 		}
