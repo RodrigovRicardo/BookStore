@@ -1,17 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
+font-family: Arial, sans-serif;
+text-align: center;
+background-color: #f9f9f9;
+margin: 0;
+padding: 0;
 }
 
 h1 {
-    margin-top: 20px;
-    color: #333;
+margin-top: 20px;
+color: #333;
 }
 
-/*containers dos livros */
+/* Navbar Styles */
+.navbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: linear-gradient(90deg, #007bff, #6610f2);
+padding: 10px 20px;
+color: white;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar Styles */
+.navbar .search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .navbar .search-container .form-control {
+        width: 180px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        padding: 8px 12px;
+        background-color: transparent;
+        color: #333;
+        transition: width 0.3s ease;
+    }
+
+        .navbar .search-container .form-control:focus {
+            width: 220px;
+        }
+
+    .navbar .search-container .btn-search {
+        border: none;
+        background-color: transparent;
+        color: #007bff;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+    }
+
+        .navbar .search-container .btn-search:hover {
+            background-color: #f1f1f1;
+        }
+
+
+
+
+
+/*containers dos livros CSS*/
 .book-container {
     display: flex;
     justify-content: space-between;
