@@ -1,0 +1,80 @@
+.card {
+    border: 1px solid #e3e6ea;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+dl.row {
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+}
+
+dd {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.img-fluid {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    max-height: 150px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: white;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #e0a800;
+    }
+
+.d-flex {
+    gap: 10px;
+}
+
+/* PopUp */
+.modal-body img {
+    width: auto;
+    height: auto;
+    max-height: 80vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
