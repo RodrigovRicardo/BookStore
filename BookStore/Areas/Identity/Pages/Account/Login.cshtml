@@ -17,8 +17,6 @@
                         <form id="account" method="post">
                             <h5 class="text-center mb-4">Use a local account to log in</h5>
                             <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
-
-                            <!-- Email Input -->
                             <div class="form-floating mb-3">
                                 <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
                                 <label asp-for="Input.Email">Email</label>
@@ -36,7 +34,7 @@
                                 </label>
                             </div>
                             <div class="d-grid">
-                                <button id="login-submit" type="submit" class="btn btn-primary btn-lg">Log in</button>
+                                <button id="login-submit" type="submit" class="btn btn-primary btn-lg">Confirm ?</button>
                             </div>
                             <div class="mt-4 text-center">
                                 <a id="forgot-password" asp-page="./ForgotPassword" class="text-decoration-none">Forgot your password?</a>
