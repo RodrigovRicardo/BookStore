@@ -20,7 +20,7 @@ namespace BookStore.Controllers
         }
         public IActionResult Backoffice()
         {
-            return View();
+            return View(_context.Books.ToList());
         }
 
         public IActionResult Details()
