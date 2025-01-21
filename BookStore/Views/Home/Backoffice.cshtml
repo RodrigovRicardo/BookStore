@@ -36,7 +36,7 @@
                         <td>@item.ISBN</td>
                         <td>@item.Price</td>
                         <td>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Edit</button></a>
+                            <a asp-controller="Bc" asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Edit</button></a>
                             <a asp-controller="Bc" asp-action="Details" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Details</button></a>
                             <a asp-controller="Bc" asp-action="Delete" asp-route-id="@item.Id"><button type="button" class="btn btn-danger">Delete</button></a>
                         </td>

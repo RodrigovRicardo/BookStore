@@ -21,6 +21,10 @@ namespace BookStore.Controllers
         {
             return View();
         }
+        public IActionResult Edit()
+        {
+            return View();
+        }
         public IActionResult Details(int id)
         {
             var book = context.Books.FirstOrDefault(b => b.Id == id);
