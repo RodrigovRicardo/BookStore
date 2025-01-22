@@ -3,13 +3,10 @@ using BookStore.Models;
 using BookStore.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using static NuGet.Packaging.PackagingConstants;
 
 namespace BookStore.Controllers
 {
-    public class HomeController : Controller
+	public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly BookStoreContext _context;
