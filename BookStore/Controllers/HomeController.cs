@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using BookStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -46,6 +47,7 @@ namespace BookStore.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Backoffice()
         {
             return View(_context.Books.ToList());
