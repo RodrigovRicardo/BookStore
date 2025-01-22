@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using BookStore.Models;
+using BookStore.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -41,9 +42,28 @@ namespace BookStore.Controllers
 
             return View(ViewModel);
         }
-        public IActionResult Orders()
+        public IActionResult Orders(int id = default)
         {
-  
+            var BookOrders = _context.Books.FirstOrDefault(p => p.Id == id);
+            var viewmodel = new OrderViewModel()
+            {
+                book = BookOrders,
+                order = new Order
+                {
+                    BookId = BookOrders.Id
+                }
+            };
+            return View("Orders", viewmodel);
+        }
+        [HttpPost]
+        public IActionResult Orders(Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Orders.Add(order);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 

@@ -33,7 +33,7 @@
                                 <p><strong>Autor:</strong> @livro.Publisher</p>
                                 <p><strong>Preço:</strong> €@livro.Price</p>
                             </a>
-                            <form asp-controller="Home" asp-action="Orders" method="post">
+                            <form asp-controller="Home" asp-action="Orders" asp-route-id=@livro.Id method="post">
                                 <button type="submit">Buy Now</button>
                             </form>
                         </div>
