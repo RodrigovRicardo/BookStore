@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BookStore.Models.Book>
+﻿@model BookStore.Models.indexviewmodel
 
 @{
     ViewData["Title"] = "Landing Page";
@@ -9,26 +9,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros Apresentados</title>
+    <title>Books presented</title>
     <link rel="stylesheet" href="site.css">
 </head>
 <body>
+    <form asp-controller="Home" asp-action="Index" method="get">
+        <input type="text" name="search" value="@Model.Search" placeholder="Search for books..." />
+        <button type="submit">Search</button>
+    </form>
     <main>
         <h1>Welcome to Our Bookstore</h1>
         <p>Here you can find a selection of books that we have available for you!</p>
         <section class="books-section">
             <div class="book-container">
-                @foreach (var livro in Model)
+                @if (Model.Books != null)
                 {
-                    <div class="book">
-                        <a asp-controller="Bc" asp-action="Details" asp-route-id="@livro.Id">
-                            <img src="@livro.Image" alt="@livro.Title">
-                            <p><strong>Título:</strong> @livro.Title</p>
-                            <p><strong>Autor:</strong> @livro.Publisher</p>
-                            <p><strong>Preço:</strong> €@livro.Price</p>
-                        </a>
-                        <a asp-controller="Home" asp-action="Orders"><button>Buy Now</button></a>
-                    </div>
+                    @foreach (var livro in Model.Books)
+                    {
+                        <div class="book">
+                            <a asp-controller="Bc" asp-action="Details" asp-route-id="@livro.Id">
+                                <img src="@livro.Image" alt="@livro.Title">
+                                <p><strong>Título:</strong> @livro.Title</p>
+                                <p><strong>Autor:</strong> @livro.Publisher</p>
+                                <p><strong>Preço:</strong> €@livro.Price</p>
+                            </a>
+                            <form asp-controller="Home" asp-action="Orders" method="post">
+                                <button type="submit">Buy Now</button>
+                            </form>
+                        </div>
+                    }
                 }
             </div>
         </section>

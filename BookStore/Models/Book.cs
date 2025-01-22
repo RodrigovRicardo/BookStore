@@ -2,11 +2,15 @@
 
 namespace BookStore.Models
 {
+
+ 
     public class indexviewmodel
     {
         public string Search { get; set; }
         public List<Book> Books { get; set; }
     }
+
+
     public class Book
     {
         [Key]

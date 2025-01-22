@@ -12,21 +12,33 @@ namespace BookStore.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly BookStoreContext _context;
 
-		public HomeController(ILogger<HomeController> logger, BookStoreContext context)
+        private List<Book> books = new List<Book>();
+
+        public HomeController(ILogger<HomeController> logger, BookStoreContext context)
 		{
 			_logger = logger;
 			_context = context;
 		}
-        public IActionResult Index(string searchString)
+        public IActionResult Index(string? search = "")
         {
-            var books = from b in _context.Books select b;
+            var query = _context.Books.AsQueryable();
 
-            if (!string.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(search))
             {
-                books = books.Where(b => b.Title.Contains(searchString) || b.Author.Contains(searchString) || b.Publisher.Contains(searchString));
+                books = query.Where(s => s.Title.ToLower().Contains(search) || s.Author.ToLower().Contains(search)).ToList();
+            }
+            else
+            {
+                books = query.ToList();
             }
 
-            return View(books.ToList());
+            var ViewModel = new indexviewmodel
+            {
+                Search = search ?? string.Empty,
+                Books = books
+            };
+
+            return View(ViewModel);
         }
         public IActionResult Orders()
         {
