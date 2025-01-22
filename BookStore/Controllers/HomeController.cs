@@ -2,6 +2,8 @@ using System.Diagnostics;
 using BookStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static NuGet.Packaging.PackagingConstants;
 
 namespace BookStore.Controllers
 {
@@ -26,11 +28,11 @@ namespace BookStore.Controllers
 
             return View(books.ToList());
         }
-        //public IActionResult Index()
-        //{
-        //	var livros = _context.Books.ToList();
-        //	return View(livros);
-        //}
+        public IActionResult Orders()
+        {
+  
+            return View();
+        }
 
         public IActionResult Backoffice()
         {

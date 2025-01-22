@@ -27,7 +27,7 @@
                             <p><strong>Autor:</strong> @livro.Publisher</p>
                             <p><strong>Preço:</strong> €@livro.Price</p>
                         </a>
-                        <button>Comprar já</button>
+                        <a asp-controller="Home" asp-action="Orders"><button>Buy Now</button></a>
                     </div>
                 }
             </div>
