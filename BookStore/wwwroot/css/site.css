@@ -1,90 +1,102 @@
 body {
-font-family: Arial, sans-serif;
-text-align: center;
-background-color: #f9f9f9;
-margin: 0;
-padding: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-margin-top: 20px;
-color: #333;
+    margin-top: 20px;
+    color: #333;
 }
 
 /* Navbar Styles */
 .navbar {
-display: flex;
-align-items: center;
-justify-content: space-between;
-background: linear-gradient(90deg, #007bff, #6610f2);
-padding: 10px 20px;
-color: white;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Search Bar Styles */
-.navbar .search-container {
     display: flex;
     align-items: center;
-    background-color: white;
-    border-radius: 30px;
-    padding: 5px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    background: linear-gradient(90deg, #4a90e2, #007aff);
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-    .navbar .search-container .form-control {
-        width: 180px;
-        border: none;
-        outline: none;
-        border-radius: 30px;
-        padding: 8px 12px;
-        background-color: transparent;
-        color: #333;
-        transition: width 0.3s ease;
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
     }
 
-        .navbar .search-container .form-control:focus {
-            width: 220px;
+        .navbar a:hover {
+            text-decoration: underline;
         }
 
-    .navbar .search-container .btn-search {
-        border: none;
-        background-color: transparent;
-        color: #007bff;
-        cursor: pointer;
-        padding: 8px;
+    /* Search Bar Styles */
+    .navbar .search-container {
+        display: flex;
+        align-items: center;
+        background-color: white;
         border-radius: 30px;
-        transition: background-color 0.3s ease;
+        padding: 5px 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-        .navbar .search-container .btn-search:hover {
-            background-color: #f1f1f1;
+        .navbar .search-container .form-control {
+            width: 180px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            padding: 8px 12px;
+            background-color: transparent;
+            color: #333;
+            transition: width 0.3s ease;
         }
 
+            .navbar .search-container .form-control:focus {
+                width: 220px;
+            }
 
+        .navbar .search-container .btn-search {
+            border: none;
+            background-color: transparent;
+            color: #007bff;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
 
+            .navbar .search-container .btn-search:hover {
+                background-color: #f1f1f1;
+            }
 
-
-/*containers dos livros CSS*/
+/* Book Containers CSS */
 .book-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
     margin: 20px auto;
     width: 90%;
 }
 
 .book {
-    border: 2px solid #ddd;
+    border: none;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 18%;
-    padding: 10px;
+    width: 250px;
+    padding: 20px;
     text-align: center;
     background-color: white;
-    margin-bottom: 20px;
-    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+    .book:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
 
     .book img {
         width: 100%;
@@ -106,7 +118,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
 button {
-    background-color: #007bff;
+    background-color: #007aff;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -118,17 +130,13 @@ button {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
     button:hover {
-        background-color: #0056b3;
+        background-color: #005bb5;
+        transform: scale(1.05);
     }
-
-.book {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 
 /*Register CSS */
 body {
