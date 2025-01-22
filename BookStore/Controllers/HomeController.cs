@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using BookStore.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.Controllers
 {
@@ -14,13 +15,24 @@ namespace BookStore.Controllers
 			_logger = logger;
 			_context = context;
 		}
-		public IActionResult Index()
-		{
-			var livros = _context.Books.ToList();
-			return View(livros);
-		}
+        public IActionResult Index(string searchString)
+        {
+            var books = from b in _context.Books select b;
 
-		public IActionResult Backoffice()
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                books = books.Where(b => b.Title.Contains(searchString) || b.Author.Contains(searchString) || b.Publisher.Contains(searchString));
+            }
+
+            return View(books.ToList());
+        }
+        //public IActionResult Index()
+        //{
+        //	var livros = _context.Books.ToList();
+        //	return View(livros);
+        //}
+
+        public IActionResult Backoffice()
         {
             return View(_context.Books.ToList());
         }

@@ -21,7 +21,7 @@
                 @foreach (var livro in Model)
                 {
                     <div class="book">
-                        <a href="Details?id=@livro.Id">
+                        <a asp-controller="Bc" asp-action="Details" asp-route-id="@livro.Id">
                             <img src="@livro.Image" alt="@livro.Title">
                             <p><strong>Título:</strong> @livro.Title</p>
                             <p><strong>Autor:</strong> @livro.Publisher</p>
