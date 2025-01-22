@@ -1,80 +1,30 @@
 ﻿@model BookStore.ViewModels.OrderViewModel
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Order";
 }
-<h1>order</h1>
+<h1>Order</h1>
+
 
 <form asp-controller="Home" asp-action="orders" method="post">
-	<div class="form-group">
-		<label asp-for="order.Name" class="control-label"></label>
-		<input asp-for="order.Name" class="form-control" />
-		<span asp-validation-for="order.Name" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="order.Address" class="control-label"></label>
-		<input asp-for="order.Address" class="form-control" />
-		<span asp-validation-for="order.Address" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="order.City" class="control-label"></label>
-		<input asp-for="order.City" class="form-control" />
-		<span asp-validation-for="order.City" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="order.PhoneNumber" class="control-label"></label>
-		<input asp-for="order.PhoneNumber" class="form-control" />
-		<span asp-validation-for="order.PhoneNumber" class="text-danger"></span>
-	</div>
-	<button type="submit">Submit order</button>
-</form>
-
-<div class="card mb-4 shadow-sm">
-    <div class="card-body">
-        <h4 class="card-title">Book</h4>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.book.Title)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.book.Title)
-            </dd>
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.book.Synopsis)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.book.Synopsis)
-            </dd>
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.book.Language)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.book.Language)
-            </dd>
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.book.Publisher)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.book.Publisher)
-            </dd>
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.book.ISBN)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.book.ISBN)
-            </dd>
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.book.Price)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.book.Price)
-            </dd>
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.book.Image)
-            </dt>
-            <dd class="col-sm-9">
-                <img src="@Model.book.Image" class="img-fluid" alt="Book image" style="max-height: 150px;" data-toggle="modal" data-target="#imageModal" />
-            </dd>
-        </dl>
+    <div class="form-group">
+        <label asp-for="order.Name" class="control-label"></label>
+        <input asp-for="order.Name" class="form-control" />
+        <span asp-validation-for="order.Name" class="text-danger"></span>
     </div>
-</div>
+    <div class="form-group">
+        <label asp-for="order.Address" class="control-label"></label>
+        <input asp-for="order.Address" class="form-control" />
+        <span asp-validation-for="order.Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="order.City" class="control-label"></label>
+        <input asp-for="order.City" class="form-control" />
+        <span asp-validation-for="order.City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="order.PhoneNumber" class="control-label"></label>
+        <input asp-for="order.PhoneNumber" class="form-control" />
+        <span asp-validation-for="order.PhoneNumber" class="text-danger"></span>
+    </div>
+    <button type="submit">Submit order</button>
+</form>

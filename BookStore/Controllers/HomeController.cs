@@ -42,29 +42,17 @@ namespace BookStore.Controllers
 
             return View(ViewModel);
         }
-        public IActionResult Orders(int id = default)
-        {
-            var BookOrders = _context.Books.FirstOrDefault(p => p.Id == id);
-            var viewmodel = new OrderViewModel()
-            {
-                book = BookOrders,
-                order = new Order
-                {
-                    BookId = BookOrders.Id
-                }
-            };
-            return View("Orders", viewmodel);
-        }
         [HttpPost]
-        public IActionResult Orders(Order order)
+        [HttpPost]
+        public IActionResult Orders(OrderViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Orders.Add(order);
+                _context.Orders.Add(viewModel.order);
                 _context.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
-            return View();
+            return View(viewModel);
         }
 
         [Authorize]
