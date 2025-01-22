@@ -7,7 +7,7 @@
 
 <form asp-controller="Home" asp-action="orders" method="post">
 
-    <input type="hidden" name="BookBought" value="@Model.BookId" id="hdnFlag" />
+    <input type="hidden" name="BookId" value="@Model.BookId" id="hdnFlag" />
 
     <div class="form-group">
         <label asp-for="@Model.Name" class="control-label"></label>

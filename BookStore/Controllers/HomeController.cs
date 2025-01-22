@@ -40,17 +40,18 @@ namespace BookStore.Controllers
             return View(ViewModel);
         }
 
-		public IActionResult Order(int id = default)
+		public IActionResult Orders(int id = default)
 		{
             var book = _context.Books.FirstOrDefault(b => b.Id == id);
-
-			return View(new OrderViewModel
-			{
+            var viewModel = new OrderViewModel
+            {
                 BookId = book.Id,
                 Image = book.Image,
                 Title = book.Title,
                 Price = book.Price,
-			});
+            };
+
+            return View(viewModel);
 		}
 
 		[HttpPost]
